@@ -1,0 +1,19 @@
+﻿@model IEnumerable<TrelloClone.Models.Board>
+
+@{
+    ViewData["Title"] = "BoardList";
+}
+
+<h1>BoardList</h1>
+    @foreach (var board in this.Model)
+    {
+        // どうやってほかのControllerへ遷移させるか
+        <button type="button" class="btn btn-outline-primary" onclick="" >@board.Name</button>
+
+    }
+
+
+@section Scripts
+{
+
+}
