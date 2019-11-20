@@ -23,11 +23,5 @@ namespace TrelloClone.Controllers
         {
             return View(await _context.Board.ToListAsync());
         }
-
-
-        private bool BoardExists(int id)
-        {
-            return _context.Board.Any(e => e.ID == id);
-        }
     }
 }

@@ -4,6 +4,29 @@
     ViewData["Title"] = "TaskList";
 }
 
-<h1>Index</h1>
-<p>ここにTaskのリストを表示する</p>
+<h1>@this.ViewData["BoardName"]</h1>
+
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var taskList in this.Model)
+        {
+        <div class="col">
+            @taskList.Name
+            @for (int i = 0; i < 4; i++)
+            {
+                <div draggable="true"  style="cursor: move;">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">テストタスク</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        }
+    </div>
+</div>
+
 

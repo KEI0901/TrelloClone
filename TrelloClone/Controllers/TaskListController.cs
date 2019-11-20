@@ -17,9 +17,11 @@ namespace TrelloClone.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
-            return View();
+            this.ViewData["BoardName"] = this._context.Board.FirstOrDefault(b => b.ID == id).Name;
+            var taskLists = this._context.TaskList.Where(t => t.BoardID == id);
+            return View(taskLists);
         }
     }
 }
